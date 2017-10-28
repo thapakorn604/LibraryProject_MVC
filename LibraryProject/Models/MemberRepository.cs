@@ -10,7 +10,7 @@ namespace LibraryProject.Models
         private static MemberRepository memberRepo = new MemberRepository();
 
         static List<Member> memberList;
-        static int counter;
+        private static int counter;
 
         private MemberRepository()
         {
@@ -20,37 +20,55 @@ namespace LibraryProject.Models
 
         public bool AddMember(Member member)
         {
-            throw new NotImplementedException();
+            if (member != null){
+                memberList.Add(member);
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public bool EditMember(Member member)
         {
-            throw new NotImplementedException();
+            if (member != null){
+                int index = memberList.FindIndex(m => m.memberId == member.memberId);
+                memberList[index] = member;
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public int GetCounter()
         {
-            throw new NotImplementedException();
+            return counter;
         }
 
         public Member GetMember(int memberId)
         {
-            throw new NotImplementedException();
+            return memberList.Find(m => m.memberId == memberId);
         }
 
         public List<Member> GetMemberList()
         {
-            throw new NotImplementedException();
+            return memberList;
         }
 
         public bool RemoveMember(int memberId)
         {
-            throw new NotImplementedException();
+            int index = memberList.FindIndex(m => m.memberId == memberId);
+
+            if (index >=0 && index >= memberList.Count){
+                memberList.RemoveAt(index);
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public void SetCounter(int value)
         {
-            throw new NotImplementedException();
+            counter = value;
         }
 
         public static MemberRepository getMemberRepository(){

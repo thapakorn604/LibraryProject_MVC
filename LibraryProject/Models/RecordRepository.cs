@@ -10,7 +10,7 @@ namespace LibraryProject.Models
         private static RecordRepository recordRepo = new RecordRepository();
 
         static List<Record> recordList;
-        static int counter;
+        private static int counter;
 
         private RecordRepository()
         {
@@ -20,32 +20,44 @@ namespace LibraryProject.Models
 
         public bool AddRecord(Record record)
         {
-            throw new NotImplementedException();
+            if (record != null){
+                recordList.Add(record);
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public bool EditRecord(Record record)
         {
-            throw new NotImplementedException();
+            if (record != null)
+            {
+                int index = recordList.FindIndex(r => r.recordId == record.recordId);
+                recordList[index] = record;
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public int GetCounter()
         {
-            throw new NotImplementedException();
+            return counter;
         }
 
         public Record GetRecord(int recordId)
         {
-            throw new NotImplementedException();
+            return recordList.Find(r => r.recordId == recordId);
         }
 
         public List<Record> GetRecordList()
         {
-            throw new NotImplementedException();
+            return recordList;
         }
 
         public void SetCounter(int value)
         {
-            throw new NotImplementedException();
+            counter = value;
         }
 
         public static RecordRepository GetRecordRepository()
@@ -55,7 +67,14 @@ namespace LibraryProject.Models
 
         public bool RemoveRecord(int recordId)
         {
-            throw new NotImplementedException();
+            int index = recordList.FindIndex(r => r.recordId == recordId);
+
+            if(index >=0 && index <= recordList.Count){
+                recordList.RemoveAt(index);
+                return true;
+            }else{
+                return false;
+            }
         }
     }
 }
