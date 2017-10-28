@@ -17,8 +17,22 @@ namespace LibraryProject.Entities
         {
         }
 
-        public Record (int recordId,int bookId,string bookName,int memberId,string memberName
-                       ,DateTime borrowDate,DateTime dueDate,string borrowStatus){
+        public Record(int recordId, int bookId, string bookName, int memberId, string memberName
+                       , DateTime borrowDate, string borrowStatus) //for add new one
+        {
+            this.recordId = recordId;
+            this.bookId = bookId;
+            this.bookName = bookName;
+            this.memberId = memberId;
+            this.memberName = memberName;
+            this.borrowDate = borrowDate;
+            this.dueDate = borrowDate.AddDays(5);
+            this.borrowStatus = borrowStatus;
+        }
+
+        public Record(int recordId, int bookId, string bookName, int memberId, string memberName
+                      , DateTime borrowDate, DateTime dueDate, DateTime returnDate, string borrowStatus) // for edit
+        {
             this.recordId = recordId;
             this.bookId = bookId;
             this.bookName = bookName;
@@ -29,4 +43,5 @@ namespace LibraryProject.Entities
             this.returnDate = returnDate;
             this.borrowStatus = borrowStatus;
         }
+    }
 }

@@ -10,7 +10,7 @@ namespace LibraryProject.Controllers
     {
         public ActionResult Index()
         {
-            return View ();
+            return View (); //show navigation menu
         }
 
         public ActionResult RedirectToLibrary()

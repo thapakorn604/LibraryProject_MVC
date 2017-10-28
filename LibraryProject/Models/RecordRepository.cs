@@ -23,7 +23,7 @@ namespace LibraryProject.Models
             throw new NotImplementedException();
         }
 
-        public bool EditRecord(int recordId)
+        public bool EditRecord(Record record)
         {
             throw new NotImplementedException();
         }

@@ -98,7 +98,6 @@
     <Compile Include="Abstract\IMemberRepository.cs" />
     <Compile Include="Models\MemberRepository.cs" />
     <Compile Include="Controllers\LibraryController.cs" />
-    <Compile Include="Abstract\ILibraryRepository.cs" />
     <Compile Include="Models\LibraryRepository.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\LibrarianController.cs" />
@@ -108,6 +107,7 @@
     <Compile Include="Models\RecordRepository.cs" />
     <Compile Include="Entities\Record.cs" />
     <Compile Include="Controllers\RecordController.cs" />
+    <Compile Include="Abstract\ILibraryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
