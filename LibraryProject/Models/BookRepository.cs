@@ -27,27 +27,31 @@ namespace LibraryProject.Models
 
         public bool EditBook(Book book)
         {
-            throw new NotImplementedException();
+            int index = bookList.FindIndex(b => b.bookId == book.bookId);
+            bookList[index] = book;
+            return true;
         }
 
         public Book GetBook(int bookId)
         {
-            throw new NotImplementedException();
+            return bookList.Find(b => b.bookId == bookId);
         }
 
         public int GetCounter()
         {
-            throw new NotImplementedException();
+            return counter;
         }
 
         public bool RemoveBook(int bookId)
         {
-            throw new NotImplementedException();
+            int index = bookList.FindIndex(b => b.bookId == bookId);
+            bookList.RemoveAt(index);
+            return true;
         }
 
         public void SetCounter(int value)
         {
-            throw new NotImplementedException();
+            counter = value;
         }
 
         public static BookRepository getBookRepository ()
@@ -57,7 +61,7 @@ namespace LibraryProject.Models
 
         public List<Book> GetBookList()
         {
-            throw new NotImplementedException();
+            return bookList;
         }
     }
 }
