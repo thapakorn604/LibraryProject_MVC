@@ -11,7 +11,7 @@ namespace LibraryProject.Models
         = new LibrarianRepository();
 
         static List<Librarian> librarianList;
-        static int counter;
+        private static int counter;
 
         private LibrarianRepository()
         {
@@ -21,37 +21,56 @@ namespace LibraryProject.Models
 
         public bool AddLibrarian(Librarian librarian)
         {
-            throw new NotImplementedException();
+            if (librarian != null)
+            {
+                librarianList.Add(librarian);
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public bool EditLibrarian(Librarian librarian)
         {
-            throw new NotImplementedException();
+            if(librarian !=null){
+                int index = librarianList.FindIndex(l => l.librarianId == librarian.librarianId);
+                librarianList[index] = librarian;
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public int GetCounter()
         {
-            throw new NotImplementedException();
+            return counter;
         }
 
         public Librarian GetLibrarian(int librarianId)
         {
-            throw new NotImplementedException();
+            return librarianList.Find(l => l.librarianId == librarianId);
         }
 
         public List<Librarian> GetLibrarianList()
         {
-            throw new NotImplementedException();
+            return librarianList;
         }
 
         public bool RemoveLibrarian(int librarianId)
         {
-            throw new NotImplementedException();
+            int index = librarianList.FindIndex(l => l.librarianId == librarianId);
+
+            if (index >=0 && index <= librarianList.Count){
+                librarianList.RemoveAt(index);
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public void SetCounter(int value)
         {
-            throw new NotImplementedException();
+            counter = value;
         }
 
         public static LibrarianRepository getLibrarianRepository (){

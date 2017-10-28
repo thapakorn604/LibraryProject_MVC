@@ -11,7 +11,7 @@ namespace LibraryProject.Models
         private static BookRepository bookRepo = new BookRepository();
 
         static List<Book> bookList;
-        static int counter ;
+        private static int counter;
 
         private BookRepository()
         {
@@ -21,15 +21,25 @@ namespace LibraryProject.Models
 
         public bool AddBook(Book book)
         {
-            bookList.Add(book);
-            return true;
+            if (book != null)
+            {
+                bookList.Add(book);
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public bool EditBook(Book book)
         {
-            int index = bookList.FindIndex(b => b.bookId == book.bookId);
-            bookList[index] = book;
-            return true;
+            if (book != null)
+            {
+                int index = bookList.FindIndex(b => b.bookId == book.bookId);
+                bookList[index] = book;
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public Book GetBook(int bookId)
@@ -45,8 +55,14 @@ namespace LibraryProject.Models
         public bool RemoveBook(int bookId)
         {
             int index = bookList.FindIndex(b => b.bookId == bookId);
-            bookList.RemoveAt(index);
-            return true;
+
+            if (index >=0 && index<=bookList.Count)
+            {
+                bookList.RemoveAt(index);
+                return true;
+            }else{
+                return false;
+            }
         }
 
         public void SetCounter(int value)
