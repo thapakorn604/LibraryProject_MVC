@@ -15,7 +15,7 @@ namespace LibraryProject.Models
 
         private BookRepository()
         {
-            bookList = new List<Book>();
+            bookList = new List<Book>{new Book(0,"Harry","JK","Fiction",300,5)};
             counter = 1;
         }
 

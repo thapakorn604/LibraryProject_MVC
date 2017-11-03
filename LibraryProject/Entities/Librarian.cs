@@ -12,7 +12,7 @@ namespace LibraryProject.Entities
         {
         }
 
-        public Librarian(int librarainId,string librarianName,string username,string password)
+        public Librarian(int librarianId,string librarianName,string username,string password)
         {
             this.librarianId = librarianId;
             this.librarianName = librarianName;

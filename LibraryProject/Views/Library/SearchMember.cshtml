@@ -1,0 +1,26 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+        <asp:ContentPlaceHolder id="Stylesheets" runat="server">
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+        </asp:ContentPlaceHolder>
+</head>
+<body>
+        <div class="toolinfy-frame">
+    <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+        <h1>Search Member</h1>
+        <form method="post" action= "SearchMemberByName" >
+        Keyword: <input type="text" name="memberName" /> <br />
+        <input type="submit" value="Search">
+        </form>
+		<form method="post" action= "SearchMemberById" >
+        MEMBER ID: <input type="text" name="memberId" /> <br />
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>

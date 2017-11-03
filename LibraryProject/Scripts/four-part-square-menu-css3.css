@@ -1,0 +1,113 @@
+body {
+background: #F1F1F1;
+padding: 0;
+margin: 0;
+font-size: small;
+}
+
+ul.square-menu {
+list-style-type: none;
+list-style: none;
+padding: 0;
+font-family: "Kavoon", Helvetica, sans-serif;
+-webkit-font-smoothing: antialiased;
+width: 380px;
+margin: 40px auto;
+}
+
+ul.square-menu li{
+float: left;
+margin:5px;	
+}
+
+ul.square-menu li a {
+display: block;
+text-decoration: none;
+padding: 80px 60px;
+background: rgb(128, 128, 128);
+color: white;
+font-weight: normal;
+font-size: 150%;
+width: 60px;
+height: 20px;
+text-align: center;
+text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+-webkit-transition: all 0.1s ease-in;
+-ms-transition: all 0.1s ease-in;
+-moz-transition: all 0.1s ease-in;
+-o-transition: all 0.1s ease-in;
+transition: all 0.1s ease-in;
+}
+
+ul.square-menu li a.slink-x {
+background: rgb(238, 124, 0);
+}
+
+ul.square-menu li a.slink-y {
+background: rgb(0, 92, 192);
+}
+
+ul.square-menu li a:hover {
+background: rgb(48, 48, 48);
+-moz-transform: scale(1.2);
+-webkit-transform: scale(1.2);
+-o-transform: scale(1.2);
+transform: scale(1.2);
+-moz-box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.12);
+-webkit-box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.12);
+box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+/*============ Toolinfy Frame Styles --- Ignore these...============*/
+.toolinfy-frame {
+width: auto;
+background: #2279B3;
+padding: 20px 40px;
+-moz-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.05);
+-webkit-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.05);
+box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.05);
+}
+
+.toolinfy-frame .logo {
+background-image: url("http://www.toolinfy.com/imgs/headlogo.png");
+width: 200px;
+height: 100px;
+float: left;
+}
+
+.toolinfy-frame .back-link {
+color: #FFF;
+-webkit-font-smoothing: antialiased;
+font-family: sans-serif;
+font-size: 20px;
+margin-top: 27px;
+display: block;
+float: left;
+margin-left: 60px;
+text-decoration: none;
+background: rgba(0, 0, 0, 0.3);
+padding: 10px 20px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+/*====================Button===============*/
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 500px;
+}
+
+
+
+

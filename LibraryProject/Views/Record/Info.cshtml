@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model LibraryProject.Entities.Record
+        
+        
+       <meta charset="utf-8" />
+        <title>Library System : Record Management</title>
+		<asp:ContentPlaceHolder id="Stylesheets" runat="server">
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+		</asp:ContentPlaceHolder>
+       
+        </head>
+	
+        <body>
+        <div class="toolinfy-frame">
+            <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+        </div>
+          
+     <div class="datagrid">
+     <table>         
+      <thead><tr>
+                <th>record ID</th>
+                <th>book ID</th>
+                <th>Book Name</th>
+				<th>member ID</th>
+						<th>Member Name</th>
+						<th>Borrow Date</th>
+						<th>Due date</th>
+						<th>Return Date</th>
+						<th>Status</th>
+                </tr></thead> 
+
+                <tbody><tr>        
+                    <td>@Model.recordId</td>
+                    <td>@Model.bookId</td>
+                    <td>@Model.bookName</td>
+					<td>@Model.memberId</td>
+						<td>@Model.memberName</td>
+						<td>@Model.borrowDate</td>
+						<td>@Model.dueDate</td>
+						<td>@Model.returnDate</td>
+                        <td>@Model.borrowStatus</td>
+                </tr></tbody>
+                  
+    </table>
+    </div>
+
+
+        <div>
+            <button class="button"> @Html.ActionLink("Back", "Index", "Record") </button>
+        </div>
+
+</body>
+</html>
+

@@ -14,7 +14,7 @@ namespace LibraryProject.Models
 
         private RecordRepository()
         {
-            recordList = new List<Record>();
+            recordList = new List<Record>() { new Record(0, 0, "Harry", 0, "Gerrard", DateTime.Now, "borrowing")};
             counter = 1;
         }
 

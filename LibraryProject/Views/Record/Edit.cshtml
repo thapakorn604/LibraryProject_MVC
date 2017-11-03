@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Record</title>
+		<asp:ContentPlaceHolder id="Stylesheets" runat="server">
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+        </asp:ContentPlaceHolder>
+	@model LibraryProject.Entities.Record
+</head>
+<body>
+	<div class="toolinfy-frame">
+    <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+		<h1>Edit Record</h1>
+	@using (Html.BeginForm("EditRecord","Record"))
+{
+    <label>Record ID: </label>
+    @Html.TextBoxFor(model => model.recordId,new { @readonly="readonly" })<br>
+    <label>Book ID: </label>
+    @Html.TextBoxFor(model => model.bookId,new { @readonly="readonly" })<br>
+    <label>Book Name: </label>
+    @Html.TextBoxFor(model => model.bookName,new { @readonly="readonly" })<br>
+    <label>Member ID: </label>
+    @Html.TextBoxFor(model => model.memberId,new { @readonly="readonly" })<br>
+		    <label>Member Name: </label>
+    @Html.TextBoxFor(model => model.memberName,new { @readonly="readonly" })<br>
+		    <label>Borrow Date: </label>
+    @Html.TextBoxFor(model => model.borrowDate,new { @readonly="readonly" })<br>
+		          <label>Due Date: </label>
+    @Html.TextBoxFor(model => model.dueDate)<br>
+		          <label>Return Date: </label>
+    @Html.TextBoxFor(model => model.returnDate)<br>
+		          <label>Borrow Status: </label>
+    @Html.TextBoxFor(model => model.borrowStatus)<br>
+    <input type="submit" value="Edit">
+}
+</body>
+</html>
+

@@ -29,13 +29,14 @@ namespace LibraryProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddBook(string librarianName,string username,string password)
+        public ActionResult AddLibrarian(string librarianName,string username,string password)
         {
             int librarianId = librarianRepo.GetCounter();
             Librarian newLibrarian = new Librarian(librarianId, librarianName, username, password);
 
             if (librarianRepo.AddLibrarian(newLibrarian))
             {
+                librarianRepo.SetCounter(librarianRepo.GetCounter()+1);
                 ViewData["MSG"] = "Add a librarian!!";
                 return View("Success");
             }
@@ -46,7 +47,7 @@ namespace LibraryProject.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpGet]
         public ActionResult RemoveLibrarian(int librarianId)
         {
             if (librarianRepo.RemoveLibrarian(librarianId))
@@ -78,7 +79,7 @@ namespace LibraryProject.Controllers
 
         }
 
-        [HttpPut]
+        [HttpPost]
         public ActionResult EditLibrarian(int librarianId,string librarianName, string username, string password)//Id cannot edit
         {
             Librarian updatedLibrarian = new Librarian(librarianId, librarianName, username, password);

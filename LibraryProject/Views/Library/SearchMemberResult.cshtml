@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model IEnumerable <LibraryProject.Entities.Member>
+        
+        
+       <meta charset="utf-8" />
+        <title>Search Result</title>
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+        </head>
+        <body>
+        <div class="toolinfy-frame">
+    <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+
+      <h1>Result</h1>  
+     <div class="datagrid">
+       <table>         
+      <thead><tr>
+                <th>Member ID</th>
+                <th>Book Name</th>
+                <th>Username</th>
+                </tr></thead> 
+                
+    @foreach (var member in Model)
+            {
+
+                <tbody><tr>        
+                    <td>@member.memberId</td>
+                    <td>@member.memberName</td>
+                    <td>@member.username</td>  
+                </tr></tbody>
+                    
+                    
+            }
+    </table>
+    </div>
+    <div>
+            <button class="button"> @Html.ActionLink("Back", "Index", "Library") </button>
+        </div>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Member</title>
+		<asp:ContentPlaceHolder id="Stylesheets" runat="server">
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+        </asp:ContentPlaceHolder>
+</head>
+<body>
+		<div class="toolinfy-frame">
+    <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+		<h1>Add Librarian</h1>
+		<form method="post" action= "AddMember" >
+        Name: <input type="text" name="memberName" /> <br />
+        Username: <input type="text" name="username" /> <br />
+		Password: <input type="password" name="password" /> <br />
+        <input type="submit" value="Add">
+	
+    </form>
+</body>
+</html>
+

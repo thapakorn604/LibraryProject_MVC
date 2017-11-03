@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model IEnumerable <LibraryProject.Entities.Member>
+		
+		
+       <meta charset="utf-8" />
+        <title>Library System : Member Management</title>
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="Scripts/four-part-square-menu-css3.css" />
+		<link rel="stylesheet" type="text/css" href="Scripts/table.css" />
+        </head>
+        <body>
+		<div class="toolinfy-frame">
+    <a href="Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+
+		<div>
+			<button class="button"> @Html.ActionLink("+Add Member", "AddMember", "Member") </button>
+		</div>
+		
+     <div class="datagrid">
+		<table>			
+      <thead><tr>
+				<th>Member ID</th>
+				<th>Member Name</th>
+				<th></th>
+				</tr></thead> 
+				
+	@foreach (var member in Model)
+            {
+
+				<tbody><tr>        
+				    <td>@member.memberId</td>
+					<td>@member.memberName</td>
+				    <td>@Html.ActionLink("[Details]", "ShowMemberInfo", "Member",new{memberId = member.memberId},null)
+					    @Html.ActionLink("[Edit]", "EditMember","Member",new{memberId = member.memberId},null)
+					    @Html.ActionLink("[Remove]", "RemoveMember","Member",new{memberId = member.memberId},new { onclick = "return confirm('Remove this member?');" })</td>	
+				</tr></tbody>
+				    
+				    
+			}
+    </table>
+	</div>
+
+</body>
+</html>
+

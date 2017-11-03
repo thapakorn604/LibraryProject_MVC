@@ -1,21 +1,34 @@
 ﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
-<html>
-<head>
-    <title>LibrarySystem : Home</title>
-</head>
+<html lang="en">
+    <head>
+     
+       <meta charset="utf-8" />
+        <title>Library System : Home</title>
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="Scripts/four-part-square-menu-css3.css" />
+        </head>
 <body>
-		<h2>Home Navigation</h2>
-            <ul>
-                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                 <li>@Html.ActionLink("Librarian", "Index", "")</li>
-                 <li>@Html.ActionLink("Member", "Index", "")</li>
-			    <li>@Html.ActionLink("Book", "Index", "")</li>
-			    <li>@Html.ActionLink("Service", "Index", "")</li>
-</ul>
-</body>
-</html>
+<div class="toolinfy-frame">
+    <a href="" class="back-link">Library System</a><br style="clear:both;"/>
+</div>
 
+                <ul class="square-menu">
+                    <li>
+                        @Html.ActionLink("Service", "Index", "Library")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Book", "Index","Book")
+                    </li>
+                    <li>
+                         @Html.ActionLink("Member", "Index","Member")
+                    </li>
+                    <li>
+                         @Html.ActionLink("Librarian", "Index","Librarian")
+                    </li>
+                    <br style="clear:both;"/>
+                </ul>
+    </body>
+</html>

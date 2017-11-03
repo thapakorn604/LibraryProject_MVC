@@ -19,10 +19,10 @@ namespace LibraryProject.Models
             recordRepo = RecordRepository.GetRecordRepository();
         }
 
-        public bool BorrowBook(Member member, Book book)
+        public bool BorrowBook(int memberId, int bookId)
         {
-            Member borrower = memberRepo.GetMember(member.memberId);
-            Book borrowBook = bookRepo.GetBook(book.bookId);
+            Member borrower = memberRepo.GetMember(memberId);
+            Book borrowBook = bookRepo.GetBook(bookId);
 
             if (borrower != null && borrowBook != null && borrowBook.bookAmount > 0)
             {

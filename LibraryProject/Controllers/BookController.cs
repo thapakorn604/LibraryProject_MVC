@@ -48,7 +48,7 @@ namespace LibraryProject.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpGet]
         public ActionResult RemoveBook(int bookId)
         {
             if (bookRepo.RemoveBook(bookId))
@@ -75,7 +75,7 @@ namespace LibraryProject.Controllers
           
         }
 
-        [HttpPut]
+        [HttpPost]
         public ActionResult EditBook (int bookId,string bookName,string bookAuthor,//bookId cannot edit
                                       string category,int bookPages,int bookAmount){
             Book updatedBook = new Book(bookId,bookName,bookAuthor,category,bookPages,bookAmount);

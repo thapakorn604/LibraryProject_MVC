@@ -81,6 +81,9 @@
     <Folder Include="Abstract\" />
     <Folder Include="Controllers\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="Views\Librarian\" />
+    <Folder Include="Views\Member\" />
+    <Folder Include="Views\Record\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -118,6 +121,45 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\four-part-square-menu-css3.css" />
+    <Content Include="Views\Book\Index.cshtml" />
+    <Content Include="Scripts\table.css" />
+    <Content Include="Views\Book\Success.cshtml" />
+    <Content Include="Views\Book\Info.cshtml" />
+    <Content Include="Views\Book\Error.cshtml" />
+    <Content Include="Views\Book\Add.cshtml" />
+    <Content Include="Views\Book\Edit.cshtml" />
+    <Content Include="Views\Librarian\Add.cshtml" />
+    <Content Include="Views\Librarian\Edit.cshtml" />
+    <Content Include="Views\Librarian\Error.cshtml" />
+    <Content Include="Views\Librarian\Index.cshtml" />
+    <Content Include="Views\Librarian\Info.cshtml" />
+    <Content Include="Views\Librarian\Success.cshtml" />
+    <Content Include="Views\Member\Add.cshtml" />
+    <Content Include="Views\Member\Edit.cshtml" />
+    <Content Include="Views\Member\Error.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\Member\Info.cshtml" />
+    <Content Include="Views\Member\Success.cshtml" />
+    <Content Include="Views\Record\Add.cshtml" />
+    <Content Include="Views\Record\Edit.cshtml" />
+    <Content Include="Views\Record\Error.cshtml" />
+    <Content Include="Views\Record\Index.cshtml" />
+    <Content Include="Views\Record\Info.cshtml" />
+    <Content Include="Views\Record\Success.cshtml" />
+    <Content Include="Views\Library\Index.cshtml" />
+    <Content Include="Views\Library\Available.cshtml" />
+    <Content Include="Views\Library\SearchBook.cshtml" />
+    <Content Include="Views\Library\SearchBookResult.cshtml" />
+    <Content Include="Views\Library\SearchMember.cshtml" />
+    <Content Include="Views\Library\SearchMemberResult.cshtml" />
+    <Content Include="Views\Library\SearchNotFound.cshtml" />
+    <Content Include="Views\Library\BorrowBook.cshtml" />
+    <Content Include="Views\Library\Error.cshtml" />
+    <Content Include="Views\Library\Success.cshtml" />
+    <Content Include="Views\Library\ReturnBook.cshtml" />
+    <Content Include="Views\Library\BorrowList.cshtml" />
+    <Content Include="Views\Library\OverdueFee.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

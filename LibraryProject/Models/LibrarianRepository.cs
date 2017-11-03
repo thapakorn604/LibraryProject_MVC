@@ -15,7 +15,7 @@ namespace LibraryProject.Models
 
         private LibrarianRepository()
         {
-            librarianList = new List<Librarian>();
+            librarianList = new List<Librarian> { new Librarian(0, "Mike", "mike01", "mikemike") };
             counter = 1;
         }
 

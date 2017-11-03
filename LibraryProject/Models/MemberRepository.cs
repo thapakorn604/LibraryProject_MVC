@@ -14,8 +14,8 @@ namespace LibraryProject.Models
 
         private MemberRepository()
         {
-            memberList = new List<Member>();
-            counter = 1;
+            memberList = new List<Member>(){new Member(0,"Gerrard","ger08","1234")};
+            counter = 1; 
         }
 
         public bool AddMember(Member member)
@@ -58,7 +58,7 @@ namespace LibraryProject.Models
         {
             int index = memberList.FindIndex(m => m.memberId == memberId);
 
-            if (index >=0 && index >= memberList.Count){
+            if (index >=0 && index <= memberList.Count){
                 memberList.RemoveAt(index);
                 return true;
             }else{

@@ -46,7 +46,7 @@ namespace LibraryProject.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpGet]
         public ActionResult RemoveMember(int memberId)
         {
             if (memberRepo.RemoveMember(memberId))
@@ -78,7 +78,7 @@ namespace LibraryProject.Controllers
 
         }
 
-        [HttpPut]
+        [HttpPost]
         public ActionResult EditMember(int memberId,string memberName,string username,string password)//id cannot edit
         {
             Member updatedMember = new Member(memberId, memberName, username, password);

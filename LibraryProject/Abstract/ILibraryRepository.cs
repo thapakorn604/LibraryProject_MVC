@@ -5,7 +5,7 @@ namespace LibraryProject.Abstract
 {
     public interface ILibraryRepository
     {
-        Boolean BorrowBook(Member member, Book book);
+        Boolean BorrowBook(int memberId, int bookId);
         Boolean ReturnBook(int recordId);
         List<Record> GetHistoryList();
         List<Record> GetBorrowList(int memberId);

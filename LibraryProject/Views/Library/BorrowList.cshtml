@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model IEnumerable <LibraryProject.Entities.Record>
+        
+        
+       <meta charset="utf-8" />
+        <title>Borrow List</title>
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+        </head>
+        <body>
+        <div class="toolinfy-frame">
+    <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+
+        <h1>Borrow List</h1>
+     <div class="datagrid">
+        <table>         
+      <thead><tr>
+                <th>Record ID</th>
+                <th> Book name</th>
+                <th> Borrowed Date</th>
+                <th> Status</th>
+                <th></th>
+                </tr></thead> 
+                
+    @foreach (var record in Model)
+            {
+
+                <tbody><tr>        
+                    <td>@record.recordId</td>
+                    <td>@record.bookName</td>
+                    <td>@record.borrowDate</td>
+                    <td>@record.borrowStatus</td>
+                    <td>@Html.ActionLink("[Return]", "ReturnBookProcess", "Library",new{recordId = record.recordId},null)
+						@Html.ActionLink("[Late Return]", "Edit","Record",new {recordId = record.recordId},null)</td>   
+                </tr></tbody>
+                    
+                    
+            }
+    </table>
+    </div>
+
+</body>
+</html>

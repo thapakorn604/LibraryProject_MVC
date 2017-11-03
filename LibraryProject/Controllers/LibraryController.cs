@@ -27,9 +27,9 @@ namespace LibraryProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult BorrowBook(Member member,Book book){
+        public ActionResult BorrowBook(int memberId,int bookId){
             
-            if(libRepo.BorrowBook(member,book)){
+            if(libRepo.BorrowBook(memberId,bookId)){
                 ViewData["MSG"] = "Borrow this book !!";
                 return View("Success");
             }else{
@@ -41,16 +41,16 @@ namespace LibraryProject.Controllers
         [HttpGet]
         public ActionResult ReturnBook()
         {
-            return View("ReturnBook");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ReturnBook(int memberId)
+        {
+            return View("BorrowList",libRepo.GetBorrowList(memberId));
         }
 
         [HttpGet]
-        public ActionResult ReturnBook(int memberId)
-        {
-            return View(libRepo.GetBorrowList(memberId));
-        }
-
-        [HttpPut]
         public ActionResult ReturnBookProcess(int recordId)
         {
             if (libRepo.ReturnBook(recordId)){ 
@@ -65,7 +65,7 @@ namespace LibraryProject.Controllers
         [HttpGet]
         public ActionResult ShowBookList()
         {
-            return View("AvailableBook",libRepo.GetAvailableBook());
+            return View("Available",libRepo.GetAvailableBook());
         }
 
         [HttpGet]
@@ -75,11 +75,23 @@ namespace LibraryProject.Controllers
         }
 
         [HttpGet]
-        public ActionResult searchBookByName(string bookName)
+        public ActionResult SearchBook()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult SearchMember()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SearchBookByName(string bookName)
         {
             List<Book> bookList = libRepo.SearchBookByName(bookName);
 
-            if (bookList != null)
+            if (bookList.Count()!=0)
             {
                 return View("SearchBookResult", bookList);
             }
@@ -90,12 +102,12 @@ namespace LibraryProject.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult searchBookById(int bookId)
+        [HttpPost]
+        public ActionResult SearchBookById(int bookId)
         {
             List<Book> bookList = libRepo.SearchBookById(bookId);
 
-            if (bookList != null){
+            if (bookList.Count()!=0){
                 return View("SearchBookResult", bookList); 
             }else{
                 ViewData["MSG"] = "with id : " + bookId;
@@ -103,12 +115,12 @@ namespace LibraryProject.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult searchMemberByName(string memberName)
+        [HttpPost]
+        public ActionResult SearchMemberByName(string memberName)
         {
             List<Member> memberList = libRepo.SearchMemberByName(memberName);
 
-            if (memberList != null){
+            if (memberList.Count()!=0){
                 return View("SearchMemberResult", memberList); 
             }else{
                 ViewData["MSG"] = "with keyword : " + memberName;
@@ -116,12 +128,12 @@ namespace LibraryProject.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult searchMemberById(int memberId)
+        [HttpPost]
+        public ActionResult SearchMemberById(int memberId)
         {
             List<Member> memberList = libRepo.SearchMemberById(memberId);
 
-            if (memberList != null)
+            if (memberList.Count()!=0)
             {
                 return View("SearchMemberResult", memberList);
             }
@@ -135,7 +147,8 @@ namespace LibraryProject.Controllers
         [HttpGet]
         public ActionResult OverdueFee(int recordId){
             double calFee = libRepo.CalOverdueFee(recordId);
-            return View("OverdueFee",calFee);
+            ViewData["MSG"] = calFee;
+            return View("OverdueFee");
         }
 
     }

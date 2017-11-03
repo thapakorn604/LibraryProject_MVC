@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model IEnumerable <LibraryProject.Entities.Record>
+		
+		
+       <meta charset="utf-8" />
+        <title>Library System : Record Management</title>
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="Scripts/four-part-square-menu-css3.css" />
+		<link rel="stylesheet" type="text/css" href="Scripts/table.css" />
+        </head>
+        <body>
+		<div class="toolinfy-frame">
+    <a href="Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+
+		<div>
+			<button class="button"> @Html.ActionLink("+Add Record", "AddRecord", "Record") </button>
+		</div>
+		
+     <div class="datagrid">
+		<table>			
+      <thead><tr>
+				<th>Record ID</th>
+				<th> Book name</th>
+				<th> Borrower name</th>
+                <th> Borrowed Date</th>
+                <th> Status</th>
+				<th></th>
+				</tr></thead> 
+				
+	@foreach (var record in Model)
+            {
+
+				<tbody><tr>        
+				    <td>@record.recordId</td>
+					<td>@record.bookName</td>
+					<td>@record.memberName</td>
+                    <td>@record.borrowDate</td>
+					<td>@record.borrowStatus</td>
+				    <td>@Html.ActionLink("[Details]", "ShowRecordInfo", "Record",new{recordId = record.recordId},null)
+					    @Html.ActionLink("[Edit]", "EditRecord","Record",new{recordId = record.recordId},null)
+					    @Html.ActionLink("[Remove]", "RemoveRecord","Record",new{recordId = record.recordId},new { onclick = "return confirm('Remove this record?');" })</td>	
+				</tr></tbody>
+				    
+				    
+			}
+    </table>
+	</div>
+
+</body>
+</html>
+

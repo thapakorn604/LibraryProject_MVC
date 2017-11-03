@@ -48,7 +48,7 @@ namespace LibraryProject.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpGet]
         public ActionResult RemoveRecord(int recordId)
         {
             if (recordRepo.RemoveRecord(recordId))
@@ -80,7 +80,7 @@ namespace LibraryProject.Controllers
 
         }
 
-        [HttpPut]
+        [HttpPost]
         public ActionResult EditRecord(int recordId, int bookId, string bookName, int memberId, string memberName
                       , DateTime borrowDate, DateTime dueDate, DateTime returnDate, string borrowStatus)//id cannot edit
         {

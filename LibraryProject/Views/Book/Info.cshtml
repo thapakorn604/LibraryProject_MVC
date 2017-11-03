@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model LibraryProject.Entities.Book
+        
+        
+       <meta charset="utf-8" />
+        <title>Library System : Book Management</title>
+		<asp:ContentPlaceHolder id="Stylesheets" runat="server">
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+		</asp:ContentPlaceHolder>
+       
+        </head>
+	
+        <body>
+        <div class="toolinfy-frame">
+            <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+        </div>
+          
+     <div class="datagrid">
+     <table>         
+      <thead><tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+				<th>category</th>
+                <th>Pages</th>
+				<th>Amount</th>	
+                </tr></thead> 
+
+                <tbody><tr>        
+                    <td>@Model.bookId</td>
+                    <td>@Model.bookName</td>
+                    <td>@Model.bookAuthor</td>
+					<td>@Model.category</td>
+					<td>@Model.bookPages</td>
+					<td>@Model.bookAmount</td>	
+                </tr></tbody>
+                  
+    </table>
+    </div>
+
+
+        <div>
+            <button class="button"> @Html.ActionLink("Back", "Index", "Book") </button>
+        </div>
+
+</body>
+</html>
+

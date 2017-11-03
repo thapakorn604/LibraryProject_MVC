@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Book</title>
+		<asp:ContentPlaceHolder id="Stylesheets" runat="server">
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+        </asp:ContentPlaceHolder>
+	@model LibraryProject.Entities.Book
+</head>
+<body>
+	<div class="toolinfy-frame">
+    <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+		<h1>Edit Book</h1>
+	@using (Html.BeginForm("Edit","Book"))
+{
+    <label>Book ID: </label>
+    @Html.TextBoxFor(model => model.bookId,new { @readonly="readonly" })<br>
+    <label>Book name: </label>
+    @Html.TextBoxFor(model => model.bookName)<br>
+    <label>Author: </label>
+    @Html.TextBoxFor(model => model.bookAuthor)<br>
+    <label>Category: </label>
+    @Html.TextBoxFor(model => model.category)<br>
+    <label>Page: </label>
+    @Html.TextBoxFor(model => model.bookPages)<br>
+    <label>Amount: </label>
+    @Html.TextBoxFor(model => model.bookAmount)<br>
+    <input type="submit" value="Edit">
+}
+</body>
+</html>
+

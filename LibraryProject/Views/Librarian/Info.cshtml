@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model LibraryProject.Entities.Librarian
+        
+        
+       <meta charset="utf-8" />
+        <title>Library System : Librarian Management</title>
+		<asp:ContentPlaceHolder id="Stylesheets" runat="server">
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+		</asp:ContentPlaceHolder>
+       
+        </head>
+	
+        <body>
+        <div class="toolinfy-frame">
+            <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+        </div>
+          
+     <div class="datagrid">
+     <table>         
+      <thead><tr>
+                <th>Librarian ID</th>
+                <th>Name</th>
+                <th>Username</th>
+				<th>Password</th>
+                </tr></thead> 
+
+                <tbody><tr>        
+                    <td>@Model.librarianId</td>
+                    <td>@Model.librarianName</td>
+                    <td>@Model.username</td>
+					<td>@Model.password</td>	
+                </tr></tbody>
+                  
+    </table>
+    </div>
+
+
+        <div>
+            <button class="button"> @Html.ActionLink("Back", "Index", "Librarian") </button>
+        </div>
+
+</body>
+</html>
+

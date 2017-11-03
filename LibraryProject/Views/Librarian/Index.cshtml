@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model IEnumerable <LibraryProject.Entities.Librarian>
+		
+		
+       <meta charset="utf-8" />
+        <title>Library System : Librarian Management</title>
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="Scripts/four-part-square-menu-css3.css" />
+		<link rel="stylesheet" type="text/css" href="Scripts/table.css" />
+        </head>
+        <body>
+		<div class="toolinfy-frame">
+    <a href="Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+
+		<div>
+			<button class="button"> @Html.ActionLink("+Add Librarian", "AddLibrarian", "Librarian") </button>
+		</div>
+		
+     <div class="datagrid">
+		<table>			
+      <thead><tr>
+				<th>Librarian ID</th>
+				<th>Librarian Name</th>
+				<th></th>
+				</tr></thead> 
+				
+	@foreach (var librarian in Model)
+            {
+
+				<tbody><tr>        
+				    <td>@librarian.librarianId</td>
+					<td>@librarian.librarianName</td>
+				    <td>@Html.ActionLink("[Details]", "ShowLibrarianInfo", "Librarian",new{librarianId = librarian.librarianId},null)
+					    @Html.ActionLink("[Edit]", "EditLibrarian","Librarian",new{librarianId = librarian.librarianId},null)
+					    @Html.ActionLink("[Remove]", "RemoveLibrarian","Librarian",new{librarianId = librarian.librarianId},new { onclick = "return confirm('Remove this librarian?');" })</td>	
+				</tr></tbody>
+				    
+				    
+			}
+    </table>
+	</div>
+
+</body>
+</html>
+

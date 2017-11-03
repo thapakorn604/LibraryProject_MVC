@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model IEnumerable <LibraryProject.Entities.Book>
+		
+		
+       <meta charset="utf-8" />
+        <title>Library System : Book Management</title>
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="Scripts/four-part-square-menu-css3.css" />
+		<link rel="stylesheet" type="text/css" href="Scripts/table.css" />
+        </head>
+        <body>
+		<div class="toolinfy-frame">
+    <a href="Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+
+		<div>
+			<button class="button"> @Html.ActionLink("+Add book", "AddBook", "Book") </button>
+		</div>
+		
+     <div class="datagrid">
+		<table>			
+      <thead><tr>
+				<th>Book ID</th>
+				<th>Book Name</th>
+				<th></th>
+				</tr></thead> 
+				
+	@foreach (var book in Model)
+            {
+
+				<tbody><tr>        
+				    <td>@book.bookId</td>
+					<td>@book.bookName</td>
+				    <td>@Html.ActionLink("[Details]", "ShowBookInfo", "Book",new{bookId = book.bookId},null)
+					    @Html.ActionLink("[Edit]", "EditBook","Book",new{bookId = book.bookId},null)
+					    @Html.ActionLink("[Remove]", "RemoveBook","Book",new{bookId = book.bookId},new { onclick = "return confirm('Remove this book?');" })</td>	
+				</tr></tbody>
+				    
+				    
+			}
+    </table>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book</title>
+		<asp:ContentPlaceHolder id="Stylesheets" runat="server">
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+        </asp:ContentPlaceHolder>
+</head>
+<body>
+		<div class="toolinfy-frame">
+    <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+		<h1>Add Book</h1>
+		<form method="post" action= "AddBook" >
+        Book name: <input type="text" name="bookName" /> <br />
+        Author: <input type="text" name="bookAuthor" /> <br />
+		Category: <input type="text" name="category" /> <br />
+		Pages: <input type="text" name="bookPages" /> <br />
+		Amount: <input type="text" name="bookAmount" /> <br />
+        <input type="submit" value="Add">
+	
+    </form>
+</body>
+</html>
+

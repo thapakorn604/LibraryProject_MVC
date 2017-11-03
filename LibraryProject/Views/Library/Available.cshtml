@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+     @model IEnumerable <LibraryProject.Entities.Book>
+        
+        
+       <meta charset="utf-8" />
+        <title>Available</title>
+        <link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../Scripts/four-part-square-menu-css3.css" />
+        <link rel="stylesheet" type="text/css" href="../Scripts/table.css" />
+        </head>
+        <body>
+        <div class="toolinfy-frame">
+    <a href="../Home" class="back-link">Library System</a><br style="clear:both;"/>
+    </div>
+
+        
+     <div class="datagrid">
+        <table>         
+      <thead><tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+				<th>Author</th>
+				<th>Available</th>
+                </tr></thead> 
+                
+    @foreach (var book in Model)
+            {
+
+                <tbody><tr>        
+                    <td>@book.bookId</td>
+                    <td>@book.bookName</td>
+					<td>@book.bookAuthor</td>
+					<td>@book.bookAmount</td>   
+                </tr></tbody>
+                    
+                    
+            }
+    </table>
+    </div>
+    <div>
+            <button class="button"> @Html.ActionLink("Back", "Index", "Library") </button>
+        </div>
+</body>
+</html>
+
